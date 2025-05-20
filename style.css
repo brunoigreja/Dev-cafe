@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,6 +13,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Header */
 header {
     background-image: linear-gradient(to right, #4a1e1b, #4a1e1be6);
     color: white;
@@ -47,13 +48,11 @@ header {
     letter-spacing: 0.05em;
     padding: 0 20px 5px 0;
     font-family: "Pacifico", cursive;
-
 }
 
 .div-logo-img {
     width: 3.5rem;
     border-radius: 50%;
-    
 }
 
 .div-list {
@@ -61,7 +60,7 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    padding: 5pix;
+    padding: 5px;
 }
 
 .button-list {
@@ -71,13 +70,12 @@ header {
     padding: 5px 1rem;
     color: white;
     font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
 }
 
 .button-list:hover {
     transform: scale(1.05);
-    transition-duration: 200ms;
-    cursor: pointer;
-
 }
 
 .menu-list {
@@ -85,24 +83,23 @@ header {
     flex-direction: row;
     list-style-type: none;
     gap: 2rem;
-    
 }
 
 .menu-link {
     text-decoration: none;
     color: #ffffffb3;
-    display: inline-block;
     font-size: 1.25rem;
     line-height: 1.75rem;
+    transition: color 0.3s ease, margin-left 0.3s ease;
 }
 
 .menu-link:hover {
     color: white;
-    transition-duration: 500ms;
     margin-left: 5px;
     cursor: pointer;
 }
 
+/* Main */
 main {
     min-height: 600px;
     padding: 0 50px;
@@ -118,12 +115,11 @@ main {
     padding: 3rem;
 }
 
-
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    text-align: center;
+    gap: 2rem;
 }
 
 .div-text-home {
@@ -131,7 +127,7 @@ main {
 }
 
 .h1-text-home {
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: bold;
 }
 
@@ -141,24 +137,22 @@ main {
 }
 
 .button-home {
-    background: linear-gradient(to right,#854d3d, #4a1e1b);
+    background: linear-gradient(to right, #854d3d, #4a1e1b);
     border: 2px solid #854d3d;
     padding: 0.5rem 1rem;
     border-radius: 9999px;
     color: white;
-    text-align: center;
     display: inline-block;
-    transition: transform 0.2s ease-in-out;
     cursor: pointer;
-    &:hover {
-        transform: scale(1.05);
-        
-    }
+    transition: transform 0.2s ease-in-out;
+}
+
+.button-home:hover {
+    transform: scale(1.05);
 }
 
 .img-home {
-    width: 550px;
-    transform: scale(1.25);
+    width: clamp(280px, 40vw, 550px);
     animation: balanco 5s linear infinite;
 }
 
@@ -172,9 +166,9 @@ main {
     100% {
         transform: rotate(0deg);
     }
-    
 }
 
+/* Services */
 .section-service {
     padding: 2.5rem 3rem;
     margin: 0 auto;
@@ -196,7 +190,7 @@ main {
 
 .div-card {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.25rem;
     place-items: center;
 }
@@ -208,13 +202,12 @@ main {
     transition: all 0.5s ease;
     max-width: 300px;
     position: relative;
-    
 }
 
 .service-card:hover {
-   background: #854d3d;
-   color: #ffffff;
-   cursor: pointer;
+    background: #854d3d;
+    color: #ffffff;
+    cursor: pointer;
 }
 
 .div-card-image {
@@ -236,34 +229,31 @@ main {
 .dic-text-services {
     padding: 1rem;
     text-align: center;
-    
 }
 
 .h1-card-service {
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
-    text-align: center;
 }
 
 .p-card-service {
     color: #6b7280;
-    transition: all 0.7s ease;
     font-size: 0.875rem;
     line-height: 1.25rem;
     margin-bottom: 1rem;
-    text-align: center;
+    transition: color 0.7s ease;
 }
 
 .service-card:hover .p-card-service {
-    color: #ffffff;
+    color: white;
 }
 
+/* Footer */
 footer {
     background-color: #270c03;
     min-height: 150px;
     padding: 1rem;
-    
 }
 
 .div-logo-footer {
@@ -278,61 +268,10 @@ footer {
     padding: 1rem;
 }
 
-
-@media screen and (max-width: 854px) {
-    .div-logo a {
-        font-size: 1.4rem;
-    }
-
-    .menu-list {
-        display: none;
-    }
-    
-    @media screen and (max-width: 589px) {
-        .div-logo a {
-            font-size: 1.5rem;
-        }
-
-        header {
-            padding: 0;
-        }
-        
-    }
-}
-
-@media screen and (max-width: 1137px) {
-    .h1-text-home {
-        font-size: 3.4rem;
-    }
-    
-}
-
-@media screen and (max-width: 1069px) {
-    .h1-text-home {
-        font-size: 3.2rem;
-    }
-    
-}
-
-@media screen and (max-width: 1035px) {
-    .h1-text-home {
-        font-size: 3.1rem;
-    }
-    
-    .img-home {
-        width: 450px;
-    }
-}
-
+/* Responsivo */
 @media screen and (max-width: 960px) {
-    main {
-        min-height: 550px;
-    }
-
     .grid {
-        display: grid;
         grid-template-columns: 1fr;
-        
     }
 
     .div-text-home {
@@ -340,30 +279,30 @@ footer {
     }
 
     .h1-text-home {
-        font-size: 3.8rem;
+        font-size: clamp(2rem, 8vw, 3rem);
     }
 
     .img-home {
-        width: 400px;
+        margin: 2rem auto 0;
     }
-
-    
 }
 
-@media screen and (max-width: 740px) {
-    .div-card {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 3.5rem;
+@media screen and (max-width: 854px) {
+    .div-logo a {
+        font-size: 1.4rem;
     }
-    
+
+    .menu-list {
+        display: none; /* Substitua com menu mobile futuramente */
+    }
 }
 
-@media screen and (max-width: 552px) {
-    .div-card {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        gap: 3.5rem;
+@media screen and (max-width: 589px) {
+    .div-logo a {
+        font-size: 1.2rem;
     }
-    
+
+    header {
+        padding: 0;
+    }
 }
